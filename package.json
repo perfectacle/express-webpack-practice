@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "rm -rf server/build && node_modules/babel-cli/bin/babel.js -w server/src -d server/build",
-    "build": "rm -rf app/dist && node_modules/webpack/bin/webpack.js && NODE_ENV=production node ./server/build/main.js",
-    "start": "NODE_ENV=development node ./server/src/main.js"
+    "build": "rm -rf app/dist && node_modules/webpack/bin/webpack.js && NODE_ENV=production node server",
+    "start": "NODE_ENV=development node server"
   },
   "author": "",
   "license": "ISC",

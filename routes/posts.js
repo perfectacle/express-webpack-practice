@@ -3,13 +3,13 @@ const fs = require('fs');
 const router = express.Router();
 
 router.get('/users', (req, res) => {
-  fs.readFile(__dirname + '/../../../data/users.json', 'utf8', (err, data) => {
+  fs.readFile(__dirname + '/../data/users.json', 'utf8', (err, data) => {
     res.end(data);
   });
 });
 
 router.get('/login/:id/:pw', (req, res) => {
-  fs.readFile(__dirname + '/../../../data/users.json', 'utf8', (err, data) => {
+  fs.readFile(__dirname + '/../data/users.json', 'utf8', (err, data) => {
     const users = JSON.parse(data);
     const id = req.params.id;
     const pw = req.params.pw;
