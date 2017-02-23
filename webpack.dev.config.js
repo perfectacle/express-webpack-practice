@@ -1,3 +1,4 @@
+'use strict';
 const webpack = require('webpack');
 const HtmlWebpackPlugin  = require('html-webpack-plugin');
 const ExtractTextPlugin  = require('extract-text-webpack-plugin');
@@ -7,8 +8,8 @@ const ROOT = './app/src';
 module.exports = {
   devtool: 'cheap-eval-source-map',
   entry: [
-    'webpack-dev-server/client?http://0.0.0.0:3001',
-    'webpack/hot/only-dev-server',
+    'webpack-dev-server/client?http://localhost:3001',
+    'webpack/hot/dev-server',
     `${ROOT}/index`
   ],
   output: {
@@ -38,10 +39,15 @@ module.exports = {
     }, {
       test: /\.css$/,
       loaders: ['style', 'css?sourceMap']
+    }, {
+      test: /\.html/,
+      loaders: ['raw-loader']
     }]
   },
   devServer: {
     hot: true,
+    inline: true,
+    headers: { 'Access-Control-Allow-Origin': '*' },
     historyApiFallback: true,
     contentBase: ROOT,
     proxy: {
