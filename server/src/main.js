@@ -21,9 +21,9 @@ app.listen(port, () => {
   console.log('Express listening on port', port);
 });
 
-app.get('/hello', (req, res) => {
+app.get('/hello', (req, res) => { // 이렇게 써도 되고
   return res.send('Can you hear me?');
 });
 
-import posts from './routes/posts';
-app.use('/posts', posts);
+import router from './routes/posts'; // 요렇게 안에 때려박아도 됨.
+app.use('/', router);
