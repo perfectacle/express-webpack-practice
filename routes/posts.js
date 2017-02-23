@@ -1,6 +1,5 @@
-import express from 'express';
-import fs from 'fs';
-
+const express = require('express');
+const fs = require('fs');
 const router = express.Router();
 
 router.get('/users', (req, res) => {
@@ -33,7 +32,6 @@ router.get('/login/:id/:pw', (req, res) => {
   });
 });
 
-export default router;
-
+module.exports = router;
 
 

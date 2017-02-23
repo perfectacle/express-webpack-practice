@@ -1,6 +1,6 @@
-import express from 'express';
-import WebpackDevServer from 'webpack-dev-server';
-import webpack from 'webpack';
+const express =  require('express');
+const WebpackDevServer = require('webpack-dev-server');
+const webpack = require('webpack');
 
 const app = express();
 const port = 3000;
@@ -25,5 +25,5 @@ app.get('/hello', (req, res) => { // 이렇게 써도 되고
   return res.send('Can you hear me?');
 });
 
-import router from './routes/posts'; // 요렇게 안에 때려박아도 됨.
+const router = require('./routes/posts'); // 요렇게 안에 때려박아도 됨.
 app.use('/', router);
