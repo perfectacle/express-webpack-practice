@@ -27,17 +27,17 @@ exports.check = (req, res) => {
   if(!token) {
     return res.status(401).json({
       success: false
-    })
+    });
   }
 
   jwt.verify(token, req.app.get('jwt-secret'), (err) => {
     if(err) {
       return res.status(401).json({
         success: false
-      })
+      });
     }
     res.json({
       success: true
-    })
+    });
   });
 };

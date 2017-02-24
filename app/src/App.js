@@ -40,7 +40,7 @@ export default class App extends Component {
         <button onClick={getAjax}>눌러봐!</button><br />
         <input type="text" />
         <input type="password" />
-        <button onClick={login}>로aa그인!</button>
+        <button onClick={login}>로그s인!</button>
       </div>
     );
   }
