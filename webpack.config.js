@@ -7,7 +7,7 @@ const ROOT = './app/src';
 const DIST = './app/dist';
 
 module.exports = {
-  entry: `${ROOT}/index`,
+  entry: `${ROOT}/app`,
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
